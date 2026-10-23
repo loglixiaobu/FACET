@@ -1,0 +1,69 @@
+{
+  "release_date": "2026-10-23",
+  "scope": "FACET R+C+X core extraction, not the full benchmark pipeline",
+  "modules": [
+    {
+      "published": "facet/selection.py",
+      "original": "experiments/facet_hybrid_modules/selection.py",
+      "original_sha256": "5ddd32377d0033af478b4861870a3e65b2995047dfcd4c97d15cab6896985448",
+      "published_sha256": "5ddd32377d0033af478b4861870a3e65b2995047dfcd4c97d15cab6896985448",
+      "adaptation": "byte-for-byte copy"
+    },
+    {
+      "published": "facet/context.py",
+      "original": "experiments/facet_hybrid_modules/context.py",
+      "original_sha256": "2579cf72262c7660098febfa3e68d1141256000c6a8bea14807876aa2b09c951",
+      "published_sha256": "2579cf72262c7660098febfa3e68d1141256000c6a8bea14807876aa2b09c951",
+      "adaptation": "byte-for-byte copy"
+    },
+    {
+      "published": "facet/scoring.py",
+      "original": "experiments/facet_hybrid_modules/scoring.py",
+      "original_sha256": "214b3565ec407674ead247b3ead8dda580c47264967e83c513c6a493aa3bec53",
+      "published_sha256": "214b3565ec407674ead247b3ead8dda580c47264967e83c513c6a493aa3bec53",
+      "adaptation": "byte-for-byte copy"
+    },
+    {
+      "published": "facet/chunking.py",
+      "original": "experiments/facet_hybrid3/chunking.py",
+      "original_sha256": "7e0b9ad566dd6643b91fe85c3af5af6c5c5f36e8a1f603afefecc0da54484a12",
+      "published_sha256": "dff32bfbba584cf8e55df1efcbfce113389b30da8cfc430a3268bd4666474881",
+      "adaptation": "Only replace Block dataclass import with local facet.types.Block"
+    },
+    {
+      "published": "facet/types.py",
+      "original": "scripts/block_rag_core.py",
+      "original_sha256": "ac41e1ceb4d3cc81505fcd1c3f0d99d97e9ab670e89d785749da1e21fb08171f",
+      "published_sha256": "c74d43c0af44f422ddc7ff21396480dbc0d107302577302d2463fc4f5a616965",
+      "adaptation": "Extract Block dataclass only"
+    },
+    {
+      "published": "facet/retrieval.py",
+      "original": "experiments/lveval_four_budget/generation.py",
+      "original_sha256": "814ff709954135d16331cf170bcf3c0d4179d0b169b7e44f9c3fe040202a0bac",
+      "published_sha256": "ead1d384b039318d6fcb30a421e036c2a30f2b05bf75fe5dcd0139efc2b84063",
+      "adaptation": "Extract ranked-prefix pack_blocks; allow any positive integer budget; preserve 4096/8192 behavior"
+    },
+    {
+      "published": "facet/pipeline.py",
+      "original": "experiments/facet_uniform_cx/index.py",
+      "original_sha256": "467a53b0887a2015a3dad40ed30b19a494d04c4f4ebcdc4d171d9d9b2e6d29db",
+      "published_sha256": "ab2331344de47e50b80ede2f62f4ce35ab7e98e79f6754b63bfbc045472beb3b",
+      "adaptation": "Connect unchanged R/C/X modules; Uniform selection follows original select_uniform; inject tokenizers and encoder"
+    }
+  ],
+  "validation": {
+    "model_free_pipeline_tests": 6,
+    "seeded_original_R_and_Uniform_equivalence_cases": 72,
+    "copied_modules_exact": true
+  },
+  "calibration_source_sha256": "599a4881ffe2415f08f8e4664eeb98886d21db427a3e94e7aa69db72547c3c5d",
+  "not_included": [
+    "datasets",
+    "model weights",
+    "vectors and caches",
+    "predictions and experimental output files",
+    "machine-specific experiment queues",
+    "authentication or secret files"
+  ]
+}

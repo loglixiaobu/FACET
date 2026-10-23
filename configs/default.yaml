@@ -1,0 +1,32 @@
+# Current R+C+X research protocol. Paths are supplied by the caller.
+models:
+  embedding: BAAI/bge-m3
+  reader: Qwen/Qwen3-8B
+  embedding_dimension: 1024
+  embedding_max_tokens: 8192
+  embedding_lowercase: true
+  embedding_normalize: true
+  reader_enable_thinking: false
+  reader_temperature: 0
+  reader_top_k: 1
+  reader_seed: 0
+chunking:
+  target_qwen_tokens: 128
+  complete_sentences_per_group: 3
+  complete_group_priority: true
+  # 128 is a soft target; long complete groups can exceed it.
+  max_reader_block_tokens: 4096
+retrieval:
+  allocation: residual
+  vector_budget: B+min(B,S)
+  contextualize: true
+  context_prefix_tokens: 64
+  title_prefix_tokens: 16
+  calibration_file: configs/calibration_context.json
+  budget_tokens: 4096
+  order: source
+  packing: whole_ranked_prefix_stop_first_overflow
+experiment:
+  physical_gpus: [0, 1]
+  supervisor: tmux
+  query_independent_indexing: true

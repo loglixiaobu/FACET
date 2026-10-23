@@ -1,0 +1,33 @@
+# Recorded research protocols, not an automatic benchmark launcher.
+official_metrics:
+  source: upstream benchmark evaluation scripts
+  scale: 100
+  macro_average: equal_weight_per_task
+  bootstrap_unit: source_document
+  bootstrap_repetitions: 5000
+  bootstrap_seed: 42
+core_six:
+  reader_budget: 4096
+  tasks:
+    - {source: LongBench, task: hotpotqa, questions: 200, metric: qa_f1_score, max_output: 32}
+    - {source: LV-Eval, task: cmrc_mixup_16k, questions: 200, metric: qa_f1_zh_score_with_gold_ans, max_output: 64}
+    - {source: LongBench, task: multifieldqa_zh, questions: 200, metric: qa_f1_zh_score, max_output: 64}
+    - {source: LV-Eval, task: multifieldqa_en_mixup_16k, questions: 101, metric: qa_f1_score_with_gold_ans, max_output: 64}
+    - {source: LV-Eval, task: loogle_MIR_mixup_16k, questions: 139, metric: qa_f1_score_with_gold_ans, max_output: 64}
+    - {source: LongBench, task: musique, questions: 200, metric: qa_f1_score, max_output: 32}
+lveval_four:
+  length: 16k
+  completed_budgets: [4096, 8192]
+  tasks:
+    - {task: factrecall_en_16k, questions: 200, metric: qa_f1_score, max_output: 16, prompt_variant: name_only}
+    - {task: loogle_SD_mixup_16k, questions: 160, metric: qa_f1_score_with_gold_ans, max_output: 64}
+    - {task: loogle_CR_mixup_16k, questions: 99, metric: qa_f1_score_with_gold_ans, max_output: 64}
+    - {task: hotpotwikiqa_mixup_16k, questions: 124, metric: qa_f1_score_with_gold_ans, max_output: 64}
+baselines:
+  fixed128: {chunking: strict_qwen128, vectors: B, order: similarity}
+  rec128: {chunking: three_sentence_soft128, vectors: B, orders: [source, similarity]}
+  uniform_cx: {chunking: same_as_facet, vectors: B+min(B,S), order: source}
+  hichunk: {methods: [HC128, HC128+AM], model: Youtu-HiChunk, chunking: native_hierarchy_qwen_soft128}
+  lumberchunk: {chunker: Qwen3-4B, chunking: native_paragraph_adapter, order: similarity}
+  semantic: {distance: adjacent_sentence_cosine_distance, percentile: 50, strict_qwen_token_cap: 128, order: similarity}
+# FC200 is a historical fixed-chunk baseline; it is not HiChunk.

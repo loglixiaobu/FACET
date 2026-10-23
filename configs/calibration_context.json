@@ -1,0 +1,196 @@
+{
+  "representation": "context",
+  "source_file": "thresholds_context.json",
+  "source_sha256": "599a4881ffe2415f08f8e4664eeb98886d21db427a3e94e7aa69db72547c3c5d",
+  "note": "Frozen training-background thresholds from the recorded BGE-M3/X protocol; background pairs are not certified negatives. These are not universal thresholds.",
+  "languages": {
+    "en": {
+      "thresholds": {
+        "1": 0.07397293253233084,
+        "2": 0.09615292093139066,
+        "3": 0.10060871084138943,
+        "4": 0.10060871084138943
+      },
+      "support": {
+        "1": {
+          "blocks": 177,
+          "docs": 128,
+          "pairs": 45312,
+          "supported": true,
+          "empirical_quantile": 0.07397293253233084
+        },
+        "2": {
+          "blocks": 170,
+          "docs": 121,
+          "pairs": 43520,
+          "supported": true,
+          "empirical_quantile": 0.09615292093139066
+        },
+        "3": {
+          "blocks": 151,
+          "docs": 102,
+          "pairs": 38656,
+          "supported": true,
+          "empirical_quantile": 0.10060871084138943
+        },
+        "4": {
+          "blocks": 55,
+          "docs": 54,
+          "pairs": 14080,
+          "supported": true,
+          "empirical_quantile": 0.09216714589553213
+        },
+        "5": {
+          "blocks": 27,
+          "docs": 27,
+          "pairs": 6912,
+          "supported": false
+        },
+        "6": {
+          "blocks": 4,
+          "docs": 4,
+          "pairs": 1024,
+          "supported": false
+        },
+        "7": {
+          "blocks": 1,
+          "docs": 1,
+          "pairs": 256,
+          "supported": false
+        }
+      },
+      "quantile": 0.95,
+      "quantile_method": "linear",
+      "minimum_support": {
+        "blocks": 32,
+        "docs": 16,
+        "pairs": 2048
+      },
+      "unsupported_k": [
+        5,
+        6,
+        7
+      ],
+      "max_supported_k": 4,
+      "fallback": "nearest_supported_larger_k_else_anchor_only",
+      "complete": true,
+      "pool_fingerprint": "cf5f00dd5ab392b42d1c2d751635f7f1dad999993fcc3723dd9d341422523f8e"
+    },
+    "zh": {
+      "thresholds": {
+        "1": 0.05799078674127069,
+        "2": 0.06919006623530208,
+        "3": 0.07263964395875129,
+        "4": 0.0832898912329104,
+        "5": 0.08817645561329719,
+        "6": 0.09844669507574784
+      },
+      "support": {
+        "1": {
+          "blocks": 376,
+          "docs": 128,
+          "pairs": 96256,
+          "supported": true,
+          "empirical_quantile": 0.05799078674127069
+        },
+        "2": {
+          "blocks": 376,
+          "docs": 128,
+          "pairs": 96256,
+          "supported": true,
+          "empirical_quantile": 0.06919006623530208
+        },
+        "3": {
+          "blocks": 376,
+          "docs": 128,
+          "pairs": 96256,
+          "supported": true,
+          "empirical_quantile": 0.07263964395875129
+        },
+        "4": {
+          "blocks": 120,
+          "docs": 97,
+          "pairs": 30720,
+          "supported": true,
+          "empirical_quantile": 0.0832898912329104
+        },
+        "5": {
+          "blocks": 78,
+          "docs": 62,
+          "pairs": 19968,
+          "supported": true,
+          "empirical_quantile": 0.08817645561329719
+        },
+        "6": {
+          "blocks": 34,
+          "docs": 24,
+          "pairs": 8704,
+          "supported": true,
+          "empirical_quantile": 0.09844669507574784
+        },
+        "7": {
+          "blocks": 2,
+          "docs": 2,
+          "pairs": 512,
+          "supported": false
+        },
+        "8": {
+          "blocks": 1,
+          "docs": 1,
+          "pairs": 256,
+          "supported": false
+        },
+        "9": {
+          "blocks": 1,
+          "docs": 1,
+          "pairs": 256,
+          "supported": false
+        },
+        "10": {
+          "blocks": 1,
+          "docs": 1,
+          "pairs": 256,
+          "supported": false
+        },
+        "11": {
+          "blocks": 1,
+          "docs": 1,
+          "pairs": 256,
+          "supported": false
+        },
+        "12": {
+          "blocks": 1,
+          "docs": 1,
+          "pairs": 256,
+          "supported": false
+        },
+        "13": {
+          "blocks": 1,
+          "docs": 1,
+          "pairs": 256,
+          "supported": false
+        }
+      },
+      "quantile": 0.95,
+      "quantile_method": "linear",
+      "minimum_support": {
+        "blocks": 32,
+        "docs": 16,
+        "pairs": 2048
+      },
+      "unsupported_k": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "max_supported_k": 6,
+      "fallback": "nearest_supported_larger_k_else_anchor_only",
+      "complete": true,
+      "pool_fingerprint": "1c4608e3e8a84e96a4bfdc9868b03c44907d519c2dd6c59a63e20216ce8d2aff"
+    }
+  }
+}
