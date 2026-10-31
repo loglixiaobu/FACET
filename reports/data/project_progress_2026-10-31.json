@@ -1,0 +1,1033 @@
+{
+  "schema_version": 1,
+  "snapshot_time": "2026-10-31T22:23:07.703523+08:00",
+  "scope_note": "Existing results before the separately authorized MC64 missing-only retry and two-judge run; no new GPU experiment executed by this summary.",
+  "score_units": "All scores 0..1; task-equal macro averages. Recall is source-token evidence recall averaged over questions.",
+  "protocol": {
+    "embedding": "BGE-M3 dense normalized",
+    "readers": [
+      "Qwen3-8B",
+      "Llama-3-8B-Instruct (3.0)"
+    ],
+    "reading_budget_qwen_tokens": 4096,
+    "facet_context_order": "source",
+    "other_context_order": "similarity",
+    "parent_chunking": "three-sentence grouping, soft 128 Qwen tokens; native methods have exceptions",
+    "index_entries": "Rec128 B; FACET B+min(B,S), usually2B; MC3B"
+  },
+  "nine_task_full_scope": {
+    "questions": 1522,
+    "methods": [
+      {
+        "method": "HC128",
+        "complete": true,
+        "completed": 1522,
+        "expected": 1522,
+        "official_f1_macro": 0.46854826360641005
+      },
+      {
+        "method": "HC128_AM",
+        "complete": true,
+        "completed": 1522,
+        "expected": 1522,
+        "official_f1_macro": 0.46725838929095614
+      },
+      {
+        "method": "MC",
+        "complete": false,
+        "completed": 1515,
+        "expected": 1522,
+        "official_f1_macro": null
+      },
+      {
+        "method": "LC",
+        "complete": false,
+        "completed": 1517,
+        "expected": 1522,
+        "official_f1_macro": null
+      },
+      {
+        "method": "Rec128_similarity",
+        "complete": true,
+        "completed": 1522,
+        "expected": 1522,
+        "official_f1_macro": 0.4639019040685912
+      },
+      {
+        "method": "RCX",
+        "complete": true,
+        "completed": 1522,
+        "expected": 1522,
+        "official_f1_macro": 0.4795272215649581
+      },
+      {
+        "method": "Coverage_S_Max",
+        "complete": true,
+        "completed": 1522,
+        "expected": 1522,
+        "official_f1_macro": 0.47221086405888363
+      },
+      {
+        "method": "Coverage_Q_Max",
+        "complete": true,
+        "completed": 1522,
+        "expected": 1522,
+        "official_f1_macro": 0.47759360575604676
+      },
+      {
+        "method": "Coverage_Q_SetC",
+        "complete": true,
+        "completed": 1522,
+        "expected": 1522,
+        "official_f1_macro": 0.47894478594222534
+      },
+      {
+        "method": "SC128_p50",
+        "complete": true,
+        "completed": 1522,
+        "expected": 1522,
+        "official_f1_macro": 0.4348728175076989
+      }
+    ]
+  },
+  "existing_common_population_comparisons": {
+    "mc32_common715": {
+      "question_count": 715,
+      "definition": "Task-equal means on identical question indices; incomplete benchmark intersections are partial.",
+      "reader_scores": {
+        "Qwen3-8B": {
+          "Rec128": {
+            "official_f1": 0.33220649416581627,
+            "score_01": 0.4529866753019079,
+            "invalid_rate": 0.033639637904932
+          },
+          "SC128": {
+            "official_f1": 0.3120511702994684,
+            "score_01": 0.42450480440209687,
+            "invalid_rate": 0.033115863682423086
+          },
+          "FACET-RCX": {
+            "official_f1": 0.35156219687925105,
+            "score_01": 0.46754666267243555,
+            "invalid_rate": 0.02840120761305874
+          },
+          "MC": {
+            "official_f1": 0.32850878457990207,
+            "score_01": 0.45832217799890873,
+            "invalid_rate": 0.0246016262420488
+          }
+        }
+      }
+    },
+    "standard8_qwen1288": {
+      "question_count": 1288,
+      "definition": "Task-equal means on identical question indices; incomplete benchmark intersections are partial.",
+      "reader_scores": {
+        "Qwen3-8B": {
+          "Fix128": {
+            "official_f1": 0.3901444122622334,
+            "score_01": 0.4735987843295959,
+            "invalid_rate": 0.024540164648100785
+          },
+          "Rec128": {
+            "official_f1": 0.40633271567804413,
+            "score_01": 0.4957854331197398,
+            "invalid_rate": 0.02766820327611984
+          },
+          "SC128": {
+            "official_f1": 0.38939821057860863,
+            "score_01": 0.47733873970267,
+            "invalid_rate": 0.022139823128958243
+          },
+          "HC128": {
+            "official_f1": 0.4080684114192913,
+            "score_01": 0.5059088198050413,
+            "invalid_rate": 0.023033820724244373
+          },
+          "LC": {
+            "official_f1": 0.39298813359296114,
+            "score_01": 0.490586966039751,
+            "invalid_rate": 0.025629655146446644
+          },
+          "MC": {
+            "official_f1": 0.39341132324363853,
+            "score_01": 0.4901920390607449,
+            "invalid_rate": 0.023205895177743067
+          },
+          "FACET-RCX": {
+            "official_f1": 0.42696642926946243,
+            "score_01": 0.5118459801830534,
+            "invalid_rate": 0.02088748381725945
+          },
+          "FACET-S-Max": {
+            "official_f1": 0.4172399199778787,
+            "score_01": 0.5029318091040712,
+            "invalid_rate": 0.020209680451244407
+          },
+          "FACET-Q-Max": {
+            "official_f1": 0.4229394709072156,
+            "score_01": 0.510516113659031,
+            "invalid_rate": 0.022063406205546105
+          },
+          "FACET-Q-SetC": {
+            "official_f1": 0.42430131273338606,
+            "score_01": 0.5123038251330114,
+            "invalid_rate": 0.01798034220443355
+          },
+          "FACET-SoftC": {
+            "official_f1": 0.42373431996128974,
+            "score_01": 0.5141717636273682,
+            "invalid_rate": 0.01862449609678415
+          }
+        }
+      }
+    },
+    "standard8_llama1265": {
+      "question_count": 1265,
+      "definition": "Task-equal means on identical question indices; incomplete benchmark intersections are partial.",
+      "reader_scores": {
+        "Llama-3-8B-Instruct": {
+          "Fix128": {
+            "official_f1": 0.36063922820028216,
+            "score_01": 0.433978864390432,
+            "invalid_rate": 0.02030106828389836
+          },
+          "Rec128": {
+            "official_f1": 0.36550500109838036,
+            "score_01": 0.4562181310694191,
+            "invalid_rate": 0.023656007287603396
+          },
+          "SC128": {
+            "official_f1": 0.3520542665870661,
+            "score_01": 0.4376377865561669,
+            "invalid_rate": 0.02184846202195101
+          },
+          "HC128": {
+            "official_f1": 0.3783148271217778,
+            "score_01": 0.4613488785713939,
+            "invalid_rate": 0.01788276930072915
+          },
+          "LC": {
+            "official_f1": 0.3636157192682946,
+            "score_01": 0.4423984794410479,
+            "invalid_rate": 0.027253742366752574
+          },
+          "MC": {
+            "official_f1": 0.3630206188890376,
+            "score_01": 0.4488082112444512,
+            "invalid_rate": 0.02090134857057705
+          },
+          "FACET-RCX": {
+            "official_f1": 0.37731720539264574,
+            "score_01": 0.46035872670865097,
+            "invalid_rate": 0.024195646627069554
+          },
+          "FACET-S-Max": {
+            "official_f1": 0.3730862742727321,
+            "score_01": 0.45995702323632104,
+            "invalid_rate": 0.033050640540549195
+          },
+          "FACET-Q-Max": {
+            "official_f1": 0.37097435608198265,
+            "score_01": 0.4530298532035665,
+            "invalid_rate": 0.026237793912248907
+          },
+          "FACET-Q-SetC": {
+            "official_f1": 0.37574384434224756,
+            "score_01": 0.4627617493902253,
+            "invalid_rate": 0.024646494318371993
+          },
+          "FACET-SoftC": {
+            "official_f1": 0.377569511012399,
+            "score_01": 0.4640263293009075,
+            "invalid_rate": 0.025547701948799986
+          }
+        }
+      }
+    },
+    "standard8_cross_reader1265": {
+      "question_count": 1265,
+      "definition": "Task-equal means on identical question indices; incomplete benchmark intersections are partial.",
+      "reader_scores": {
+        "Qwen3-8B": {
+          "Fix128": {
+            "official_f1": 0.3902910769269302,
+            "score_01": 0.4721664812804084,
+            "invalid_rate": 0.025104778001368372
+          },
+          "Rec128": {
+            "official_f1": 0.4053952821228934,
+            "score_01": 0.4946700253931977,
+            "invalid_rate": 0.02834072245040358
+          },
+          "SC128": {
+            "official_f1": 0.3898282614953332,
+            "score_01": 0.47761222843780243,
+            "invalid_rate": 0.022865600155928055
+          },
+          "HC128": {
+            "official_f1": 0.4087413074307746,
+            "score_01": 0.5068872861042184,
+            "invalid_rate": 0.023575849723293327
+          },
+          "LC": {
+            "official_f1": 0.39248667471774856,
+            "score_01": 0.49006364657820567,
+            "invalid_rate": 0.026205717349609383
+          },
+          "MC": {
+            "official_f1": 0.3930544304300072,
+            "score_01": 0.489277240738994,
+            "invalid_rate": 0.023855813207802442
+          },
+          "FACET-RCX": {
+            "official_f1": 0.42668072727119294,
+            "score_01": 0.5110721959668142,
+            "invalid_rate": 0.021189680924769288
+          },
+          "FACET-S-Max": {
+            "official_f1": 0.41679495513011827,
+            "score_01": 0.5025881007907105,
+            "invalid_rate": 0.02079176814494505
+          },
+          "FACET-Q-Max": {
+            "official_f1": 0.4223093674244063,
+            "score_01": 0.5096478583005146,
+            "invalid_rate": 0.022583117959781924
+          },
+          "FACET-Q-SetC": {
+            "official_f1": 0.4239084943689378,
+            "score_01": 0.5115959537275961,
+            "invalid_rate": 0.018424039063119138
+          },
+          "FACET-SoftC": {
+            "official_f1": 0.4223385084922321,
+            "score_01": 0.5119969474222741,
+            "invalid_rate": 0.019004973432110356
+          }
+        },
+        "Llama-3-8B-Instruct": {
+          "Fix128": {
+            "official_f1": 0.36063922820028216,
+            "score_01": 0.433978864390432,
+            "invalid_rate": 0.02030106828389836
+          },
+          "Rec128": {
+            "official_f1": 0.36550500109838036,
+            "score_01": 0.4562181310694191,
+            "invalid_rate": 0.023656007287603396
+          },
+          "SC128": {
+            "official_f1": 0.3520542665870661,
+            "score_01": 0.4376377865561669,
+            "invalid_rate": 0.02184846202195101
+          },
+          "HC128": {
+            "official_f1": 0.3783148271217778,
+            "score_01": 0.4613488785713939,
+            "invalid_rate": 0.01788276930072915
+          },
+          "LC": {
+            "official_f1": 0.3636157192682946,
+            "score_01": 0.4423984794410479,
+            "invalid_rate": 0.027253742366752574
+          },
+          "MC": {
+            "official_f1": 0.3630206188890376,
+            "score_01": 0.4488082112444512,
+            "invalid_rate": 0.02090134857057705
+          },
+          "FACET-RCX": {
+            "official_f1": 0.37731720539264574,
+            "score_01": 0.46035872670865097,
+            "invalid_rate": 0.024195646627069554
+          },
+          "FACET-S-Max": {
+            "official_f1": 0.3730862742727321,
+            "score_01": 0.45995702323632104,
+            "invalid_rate": 0.033050640540549195
+          },
+          "FACET-Q-Max": {
+            "official_f1": 0.37097435608198265,
+            "score_01": 0.4530298532035665,
+            "invalid_rate": 0.026237793912248907
+          },
+          "FACET-Q-SetC": {
+            "official_f1": 0.37574384434224756,
+            "score_01": 0.4627617493902253,
+            "invalid_rate": 0.024646494318371993
+          },
+          "FACET-SoftC": {
+            "official_f1": 0.377569511012399,
+            "score_01": 0.4640263293009075,
+            "invalid_rate": 0.025547701948799986
+          }
+        }
+      }
+    }
+  },
+  "length_comparison": {
+    "questions_per_method": 2888,
+    "groups_per_method": 20,
+    "tasks": [
+      "loogle_SD_mixup",
+      "loogle_CR_mixup",
+      "hotpotwikiqa_mixup",
+      "loogle_MIR_mixup",
+      "cmrc_mixup"
+    ],
+    "length_macro_official_f1": {
+      "32k": {
+        "rec128": 0.3324617802634266,
+        "sc128_p50": 0.3097774070682988,
+        "rcx": 0.3516212149315784,
+        "rcx_minus_rec128": 0.01915943466815179,
+        "rcx_minus_sc128": 0.04184380786327956
+      },
+      "64k": {
+        "rec128": 0.32616818230110584,
+        "sc128_p50": 0.3109897243218232,
+        "rcx": 0.33596780669373516,
+        "rcx_minus_rec128": 0.00979962439262934,
+        "rcx_minus_sc128": 0.024978082371911937
+      },
+      "128k": {
+        "rec128": 0.317840370886582,
+        "sc128_p50": 0.30052615474813543,
+        "rcx": 0.32780477132731145,
+        "rcx_minus_rec128": 0.009964400440729406,
+        "rcx_minus_sc128": 0.027278616579176004
+      },
+      "256k": {
+        "rec128": 0.3261620999337858,
+        "sc128_p50": 0.299633025272817,
+        "rcx": 0.3274857402663434,
+        "rcx_minus_rec128": 0.0013236403325576163,
+        "rcx_minus_sc128": 0.027852714993526425
+      }
+    }
+  },
+  "retrieval": {
+    "document_length_qwen_tokens": [
+      8000,
+      24000
+    ],
+    "questions_total": 268,
+    "results": [
+      {
+        "dataset": "qmsum",
+        "method": "Rec128",
+        "completed": 183,
+        "expected": 183,
+        "complete": true,
+        "metrics": {
+          "R1": 0.07589583113391782,
+          "R5": 0.25284140332960603,
+          "R10": 0.3511786538771063,
+          "budget_1280": 0.3839588011755429,
+          "budget_2048": 0.4554544730018327
+        },
+        "query_encoding_mean_ms": 53.48540307149862,
+        "retrieval_mean_ms": 0.14755982763128855
+      },
+      {
+        "dataset": "qmsum",
+        "method": "SC",
+        "completed": 183,
+        "expected": 183,
+        "complete": true,
+        "metrics": {
+          "R1": 0.0305508171016044,
+          "R5": 0.10941848824446451,
+          "R10": 0.16491234561109644,
+          "budget_1280": 0.27121447504604024,
+          "budget_2048": 0.35943210863648306
+        },
+        "query_encoding_mean_ms": 53.48540307149862,
+        "retrieval_mean_ms": 0.2191315705333251
+      },
+      {
+        "dataset": "qmsum",
+        "method": "HiChunk",
+        "completed": 183,
+        "expected": 183,
+        "complete": true,
+        "metrics": {
+          "R1": 0.10129250071941143,
+          "R5": 0.2519908111655472,
+          "R10": 0.3500463636510285,
+          "budget_1280": 0.3667987203715376,
+          "budget_2048": 0.45270131256476825
+        },
+        "query_encoding_mean_ms": 53.48540307149862,
+        "retrieval_mean_ms": 0.16558176425636792
+      },
+      {
+        "dataset": "qmsum",
+        "method": "MC",
+        "completed": 183,
+        "expected": 183,
+        "complete": true,
+        "metrics": {
+          "R1": 0.06355497879639305,
+          "R5": 0.22146650425366804,
+          "R10": 0.3207638303323137,
+          "budget_1280": 0.3506610320235932,
+          "budget_2048": 0.4568049456211499
+        },
+        "query_encoding_mean_ms": 53.48540307149862,
+        "retrieval_mean_ms": 0.26793596767336947
+      },
+      {
+        "dataset": "qmsum",
+        "method": "RCX",
+        "completed": 183,
+        "expected": 183,
+        "complete": true,
+        "metrics": {
+          "R1": 0.07609252486732614,
+          "R5": 0.2508915736286352,
+          "R10": 0.35203965401283893,
+          "budget_1280": 0.38474952164350534,
+          "budget_2048": 0.4588949614586835
+        },
+        "query_encoding_mean_ms": 53.48540307149862,
+        "retrieval_mean_ms": 0.6112352502150613
+      },
+      {
+        "dataset": "qasper",
+        "method": "Rec128",
+        "completed": 85,
+        "expected": 85,
+        "complete": true,
+        "metrics": {
+          "R1": 0.17357834193401855,
+          "R5": 0.449276470626147,
+          "R10": 0.5458811315115681,
+          "budget_1280": 0.5926536455586463,
+          "budget_2048": 0.722000632687088
+        },
+        "query_encoding_mean_ms": 47.11797741406104,
+        "retrieval_mean_ms": 0.12828054673531478
+      },
+      {
+        "dataset": "qasper",
+        "method": "SC",
+        "completed": 85,
+        "expected": 85,
+        "complete": true,
+        "metrics": {
+          "R1": 0.09075412154834381,
+          "R5": 0.29500984976935335,
+          "R10": 0.39771299764065093,
+          "budget_1280": 0.5154183304464023,
+          "budget_2048": 0.6289067336122853
+        },
+        "query_encoding_mean_ms": 47.11797741406104,
+        "retrieval_mean_ms": 0.1678326988921446
+      },
+      {
+        "dataset": "qasper",
+        "method": "HiChunk",
+        "completed": 85,
+        "expected": 85,
+        "complete": true,
+        "metrics": {
+          "R1": 0.22175834856404694,
+          "R5": 0.4844843988713562,
+          "R10": 0.6336734356444992,
+          "budget_1280": 0.6560159915918573,
+          "budget_2048": 0.751582053315228
+        },
+        "query_encoding_mean_ms": 47.11797741406104,
+        "retrieval_mean_ms": 0.10916091063443352
+      },
+      {
+        "dataset": "qasper",
+        "method": "MC",
+        "completed": 79,
+        "expected": 85,
+        "complete": false,
+        "metrics": {
+          "R1": 0.10908710235395633,
+          "R5": 0.38298964459370366,
+          "R10": 0.5619901800115138,
+          "budget_1280": 0.5849277559755284,
+          "budget_2048": 0.6732347060573325
+        },
+        "query_encoding_mean_ms": 47.21828790593751,
+        "retrieval_mean_ms": 0.19520002452633048
+      },
+      {
+        "dataset": "qasper",
+        "method": "RCX",
+        "completed": 85,
+        "expected": 85,
+        "complete": true,
+        "metrics": {
+          "R1": 0.17357834193401855,
+          "R5": 0.449276470626147,
+          "R10": 0.5458811315115681,
+          "budget_1280": 0.5907599303260744,
+          "budget_2048": 0.7182663299772402
+        },
+        "query_encoding_mean_ms": 47.11797741406104,
+        "retrieval_mean_ms": 0.5583407686037176
+      }
+    ]
+  },
+  "mc64_before_retry": {
+    "source_time": "2026-10-30T18:18:20.328762+08:00",
+    "completed": 698,
+    "expected": 722,
+    "groups": {
+      "mc/loogle_SD_mixup_64k": {
+        "method": "mc",
+        "task": "loogle_SD_mixup_64k",
+        "expected": 160,
+        "completed": 149,
+        "complete": false,
+        "score": null,
+        "partial_score": 0.5937915086502913,
+        "failed": 0,
+        "missing": 11
+      },
+      "mc/loogle_CR_mixup_64k": {
+        "method": "mc",
+        "task": "loogle_CR_mixup_64k",
+        "expected": 99,
+        "completed": 98,
+        "complete": false,
+        "score": null,
+        "partial_score": 0.21220483106324914,
+        "failed": 0,
+        "missing": 1
+      },
+      "mc/hotpotwikiqa_mixup_64k": {
+        "method": "mc",
+        "task": "hotpotwikiqa_mixup_64k",
+        "expected": 124,
+        "completed": 116,
+        "complete": false,
+        "score": null,
+        "partial_score": 0.22542419266557198,
+        "failed": 0,
+        "missing": 8
+      },
+      "mc/loogle_MIR_mixup_64k": {
+        "method": "mc",
+        "task": "loogle_MIR_mixup_64k",
+        "expected": 139,
+        "completed": 135,
+        "complete": false,
+        "score": null,
+        "partial_score": 0.17137338340209302,
+        "failed": 0,
+        "missing": 4
+      },
+      "mc/cmrc_mixup_64k": {
+        "method": "mc",
+        "task": "cmrc_mixup_64k",
+        "expected": 200,
+        "completed": 200,
+        "complete": true,
+        "score": 0.3684148019399964,
+        "partial_score": 0.3684148019399964,
+        "failed": 0,
+        "missing": 0
+      }
+    }
+  },
+  "judge_validation": {
+    "compass": {
+      "judged": 38107,
+      "source_missing": 363,
+      "judge_failed": 0,
+      "invalid": 951,
+      "exploratory": false,
+      "controls_passed": 16,
+      "controls_expected": 16
+    },
+    "mprom": {
+      "judged": 38107,
+      "source_missing": 363,
+      "judge_failed": 0,
+      "invalid": 0,
+      "exploratory": true,
+      "controls_passed": 11,
+      "controls_expected": 16
+    }
+  },
+  "matched_allocation_test": {
+    "scope": "six tasks,1040questions,matched2Bentries,C+X,sourceorder",
+    "adaptive_f1_macro": 0.424179,
+    "uniform_f1_macro": 0.422634,
+    "difference": 0.001545,
+    "document_paired_bootstrap_95ci": [
+      -0.00216,
+      0.005501
+    ],
+    "note": "Rounded from published report;5000bootstrapreplicates,seed42; interval crosses0."
+  },
+  "timing": {
+    "mc32": {
+      "source": "lveval/_mc/TIMING.md",
+      "generated_at": "2026-10-29T14:45:49.343120+08:00",
+      "view_generation_wall_lower_bound_seconds": 47489.51735281944,
+      "new_encoding_phase_wall_seconds": 9588.50349341333,
+      "online_all_five_tasks": {
+        "rec128": {
+          "questions": 722,
+          "fresh_answers": 722,
+          "cached_answers": 0,
+          "query_encoding": {
+            "status": "excluded",
+            "n": 0,
+            "expected": 722,
+            "unit": "ms",
+            "mean": null,
+            "p50": null,
+            "p95": null,
+            "sum_request_ms": null,
+            "note": null
+          },
+          "scoring": {
+            "status": "measured",
+            "n": 722,
+            "expected": 722,
+            "unit": "ms",
+            "mean": 0.1257524162613454,
+            "p50": 0.11861510574817657,
+            "p95": 0.19829645752906797,
+            "sum_request_ms": 90.79324454069138,
+            "note": null
+          },
+          "retrieval_and_packing_cached_query": {
+            "status": "measured",
+            "n": 722,
+            "expected": 722,
+            "unit": "ms",
+            "mean": 179.89996181403666,
+            "p50": 181.46475590765476,
+            "p95": 258.765360713005,
+            "sum_request_ms": 129887.77242973447,
+            "note": null
+          },
+          "context_and_prompt_assembly_cached_query": {
+            "status": "measured",
+            "n": 722,
+            "expected": 722,
+            "unit": "ms",
+            "mean": 190.1462394124996,
+            "p50": 192.3820711672306,
+            "p95": 270.82753852009773,
+            "sum_request_ms": 137285.5848558247,
+            "note": null
+          },
+          "reader_fresh": {
+            "status": "measured",
+            "n": 722,
+            "expected": 722,
+            "unit": "ms",
+            "mean": 4373.3482562635,
+            "p50": 3789.9609431624413,
+            "p95": 9380.23535553366,
+            "sum_request_ms": 3157557.441022247,
+            "note": null
+          },
+          "total_fresh_answer_cached_query": {
+            "status": "measured",
+            "n": 722,
+            "expected": 722,
+            "unit": "ms",
+            "mean": 4563.494495676,
+            "p50": 3979.108864441514,
+            "p95": 9589.414043724537,
+            "sum_request_ms": 3294843.025878072,
+            "note": null
+          }
+        },
+        "sc128_p50": {
+          "questions": 722,
+          "fresh_answers": 722,
+          "cached_answers": 0,
+          "query_encoding": {
+            "status": "excluded",
+            "n": 0,
+            "expected": 722,
+            "unit": "ms",
+            "mean": null,
+            "p50": null,
+            "p95": null,
+            "sum_request_ms": null,
+            "note": null
+          },
+          "scoring": {
+            "status": "measured",
+            "n": 722,
+            "expected": 722,
+            "unit": "ms",
+            "mean": 0.1933907785574155,
+            "p50": 0.15108846127986908,
+            "p95": 0.414193421602249,
+            "sum_request_ms": 139.62814211845398,
+            "note": null
+          },
+          "retrieval_and_packing_cached_query": {
+            "status": "measured",
+            "n": 722,
+            "expected": 722,
+            "unit": "ms",
+            "mean": 441.787127389926,
+            "p50": 363.8857305049896,
+            "p95": 904.84730489552,
+            "sum_request_ms": 318970.3059755266,
+            "note": null
+          },
+          "context_and_prompt_assembly_cached_query": {
+            "status": "measured",
+            "n": 722,
+            "expected": 722,
+            "unit": "ms",
+            "mean": 452.4390510698765,
+            "p50": 373.76164831221104,
+            "p95": 916.0439539700745,
+            "sum_request_ms": 326660.9948724508,
+            "note": null
+          },
+          "reader_fresh": {
+            "status": "measured",
+            "n": 722,
+            "expected": 722,
+            "unit": "ms",
+            "mean": 4400.065779366074,
+            "p50": 3780.727168545127,
+            "p95": 9617.63870324939,
+            "sum_request_ms": 3176847.4927023053,
+            "note": null
+          },
+          "total_fresh_answer_cached_query": {
+            "status": "measured",
+            "n": 722,
+            "expected": 722,
+            "unit": "ms",
+            "mean": 4852.504830435951,
+            "p50": 4196.674898266792,
+            "p95": 10015.201621130103,
+            "sum_request_ms": 3503508.487574756,
+            "note": null
+          }
+        },
+        "rcx": {
+          "questions": 722,
+          "fresh_answers": 722,
+          "cached_answers": 0,
+          "query_encoding": {
+            "status": "excluded",
+            "n": 0,
+            "expected": 722,
+            "unit": "ms",
+            "mean": null,
+            "p50": null,
+            "p95": null,
+            "sum_request_ms": null,
+            "note": null
+          },
+          "scoring": {
+            "status": "measured",
+            "n": 722,
+            "expected": 722,
+            "unit": "ms",
+            "mean": 1.410168593032208,
+            "p50": 1.3897381722927094,
+            "p95": 1.9495042040944093,
+            "sum_request_ms": 1018.1417241692543,
+            "note": null
+          },
+          "retrieval_and_packing_cached_query": {
+            "status": "measured",
+            "n": 722,
+            "expected": 722,
+            "unit": "ms",
+            "mean": 198.9915706217289,
+            "p50": 200.68397745490074,
+            "p95": 287.24167216569185,
+            "sum_request_ms": 143671.91398888826,
+            "note": null
+          },
+          "context_and_prompt_assembly_cached_query": {
+            "status": "measured",
+            "n": 722,
+            "expected": 722,
+            "unit": "ms",
+            "mean": 210.48016377164882,
+            "p50": 212.52031065523624,
+            "p95": 301.18733812123537,
+            "sum_request_ms": 151966.67824313045,
+            "note": null
+          },
+          "reader_fresh": {
+            "status": "measured",
+            "n": 722,
+            "expected": 722,
+            "unit": "ms",
+            "mean": 4374.30414394927,
+            "p50": 3827.1933253854513,
+            "p95": 9258.21017231792,
+            "sum_request_ms": 3158247.591931373,
+            "note": null
+          },
+          "total_fresh_answer_cached_query": {
+            "status": "measured",
+            "n": 722,
+            "expected": 722,
+            "unit": "ms",
+            "mean": 4584.784307720919,
+            "p50": 4027.1201077848673,
+            "p95": 9468.112404271958,
+            "sum_request_ms": 3310214.2701745033,
+            "note": null
+          }
+        },
+        "mc": {
+          "questions": 715,
+          "fresh_answers": 715,
+          "cached_answers": 0,
+          "query_encoding": {
+            "status": "excluded",
+            "n": 0,
+            "expected": 715,
+            "unit": "ms",
+            "mean": null,
+            "p50": null,
+            "p95": null,
+            "sum_request_ms": null,
+            "note": null
+          },
+          "scoring": {
+            "status": "measured",
+            "n": 715,
+            "expected": 715,
+            "unit": "ms",
+            "mean": 1.9986484694730986,
+            "p50": 2.1324269473552704,
+            "p95": 2.8224509209394455,
+            "sum_request_ms": 1429.0336556732655,
+            "note": null
+          },
+          "retrieval_and_packing_cached_query": {
+            "status": "measured",
+            "n": 715,
+            "expected": 715,
+            "unit": "ms",
+            "mean": 310.16050703771464,
+            "p50": 311.44900619983673,
+            "p95": 445.51499299705023,
+            "sum_request_ms": 221764.76253196597,
+            "note": null
+          },
+          "context_and_prompt_assembly_cached_query": {
+            "status": "measured",
+            "n": 715,
+            "expected": 715,
+            "unit": "ms",
+            "mean": 320.5344012567213,
+            "p50": 322.17616215348244,
+            "p95": 457.4035130441188,
+            "sum_request_ms": 229182.09689855576,
+            "note": null
+          },
+          "reader_fresh": {
+            "status": "measured",
+            "n": 715,
+            "expected": 715,
+            "unit": "ms",
+            "mean": 4383.832258762388,
+            "p50": 3746.2721839547157,
+            "p95": 9449.97786618769,
+            "sum_request_ms": 3134440.0650151074,
+            "note": null
+          },
+          "total_fresh_answer_cached_query": {
+            "status": "measured",
+            "n": 715,
+            "expected": 715,
+            "unit": "ms",
+            "mean": 4704.366660019109,
+            "p50": 4035.4582257568836,
+            "p95": 9768.481209501622,
+            "sum_request_ms": 3363622.161913663,
+            "note": null
+          }
+        }
+      },
+      "query_encoding": "excluded: reused; cold cost unknown",
+      "offline_cold_wall_seconds": null,
+      "note": "Document seconds, concurrent request seconds and stage wall are distinct; no cold speed ratio."
+    },
+    "mc64_view_generation_phase_wall_seconds": 60402.35,
+    "mc64_retrieval_fresh_reader_means_ms": {
+      "loogle_SD_mixup_64k": [
+        376.0,
+        4324.2
+      ],
+      "loogle_CR_mixup_64k": [
+        346.0,
+        4737.1
+      ],
+      "hotpotwikiqa_mixup_64k": [
+        327.0,
+        3866.3
+      ],
+      "loogle_MIR_mixup_64k": [
+        362.6,
+        4221.7
+      ],
+      "cmrc_mixup_64k": [
+        253.6,
+        4845.1
+      ]
+    },
+    "cold_offline_total": null,
+    "note": "MC32 online population differs by method; MC64 query encoding excluded cached vectors; no cold speedup ratio supported."
+  },
+  "paper_status": {
+    "written_sections": [
+      "abstract",
+      "introduction",
+      "related_work"
+    ],
+    "missing_sections": [
+      "method",
+      "experiments",
+      "conclusion",
+      "limitations"
+    ],
+    "empirical_claim_established": false,
+    "required_packages": [
+      "matched-budget allocation and frozen finalmethod",
+      "evidence retrieval with allocationutility/failure analysis",
+      "cost curve,paired statistics,judge human audit",
+      "complete manuscript and reproducible artifact"
+    ]
+  },
+  "source_sha256": {
+    "Date/data/10-26_baselines.csv": "488256421d9b9683345eb667494d5b089737a2f9396abf20210361ce97c2a8eb",
+    "Date/data/10-29_mc32_dual_judge_results.json": "178335b0ce421bcc33e6c37f46be7b1de6d9b48b13523082b0c68b036b0bd11b",
+    "Date/data/10-28_lveval_results.json": "129260165cea6af22b96cc0d5f6044a742fdba9127d98ec032393b7f7c297373",
+    "reports/FACET_NIGHT_FULL_RESULTS_2026-10-22.md": "3ec5678dbf596608e36d2117f097e2f2f0e8427cdf46ea632f2fbf4544f46b21",
+    "lveval/_parallel_mc64_hc32_64/mc01/summary.json": "ef07fb837038c237f06da046200dd3cc5532a030fa69e2e9b331f966b90ad2fc",
+    "paper/main.tex": "8916b24d4ef83c71a4a9b4fbbfcfb76de786c26ad39edf00804fbc7ebb60494c",
+    "paper/sections/abstract.tex": "f00ddf125758571942e857e55ee5d124ff78a1210f0a889262b0d5f6775f9ab8",
+    "Retrieval/Rec128/qmsum/summary.json": "f09b1b7b9713c8502dfc5a66e31ee80f2d61f21920eae44d7b1f57f40eeb50f1",
+    "Retrieval/SC/qmsum/summary.json": "5ba4e6ff0c1ce66bd374e417f0471d2fce8f996bdcc5b72dfc755143de6d7050",
+    "Retrieval/HiChunk/qmsum/summary.json": "07f631c42aefec178320e5c1160eac30108e473c8c814f85f0a990a88d503bcc",
+    "Retrieval/MC/qmsum/summary.json": "37923dde7eff3d8c948e0e5b76bfdf2e2b17ff6be5186a19949cce36e6473a0f",
+    "Retrieval/RCX/qmsum/summary.json": "79c3a7ad43823a63ade7464b98e16469ca0644d39b610a041f3e8bd8698fcaa9",
+    "Retrieval/Rec128/qasper/summary.json": "ac06e83b610faad5a734957695a7fdf0c46db049e4cce82a13b0aba282cf2660",
+    "Retrieval/SC/qasper/summary.json": "866256a4d000430677d334b98cd765b40d4a6589154bde2d8d793b8a55b46cfa",
+    "Retrieval/HiChunk/qasper/summary.json": "620115ba2a89841543cb832b3bdba280bd9643c0fec356f698dee764a603be83",
+    "Retrieval/MC/qasper/summary.json": "e63074f4fece7c215cbe08abcdd6e75422552497cac979a9f3fef731a9c79701",
+    "Retrieval/RCX/qasper/summary.json": "5a0e6e2666d8ebd0786daec3b6f153b79127cb270388a54017a3642c9f2072df"
+  }
+}
